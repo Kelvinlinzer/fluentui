@@ -28,7 +28,7 @@ const getStateForPath = (examplePath: string) => {
   const rtl = exampleNameWithExtension.endsWith('.rtl.tsx');
   const exampleUrl = _.kebabCase(exampleNameWithoutExtension);
 
-  const hostUrl = `https://fabricweb.z5.web.core.windows.net${process.env.URL_BASE_PATH}`;
+  const hostUrl = `https://fabricweb.z5.web.core.windows.net${process.env.URL_BASE_PATH}/react-northstar`;
   const pageUrl = `${hostUrl}/maximize/${exampleUrl}/${rtl}`;
 
   return {
