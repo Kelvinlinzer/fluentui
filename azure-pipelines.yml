@@ -103,7 +103,7 @@ jobs:
     workspace:
       clean: all
     variables:
-      URL_BASE_PATH: "/screener/${{ variables['Build.SourceVersion'] }}"
+      URL_BASE_PATH: "/pr-deploy-site/${{ variables['Build.SourceVersion'] }}"
     steps:
       - template: azure-pipelines.tools.yml
 
