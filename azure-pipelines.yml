@@ -128,7 +128,7 @@ jobs:
           ContainerName: '$web'
           BlobPrefix: 'screener/$(Build.SourceVersion)/react-northstar'
 
-      - script: yarn test:fluentui:visual:build
+      - script: yarn test:fluentui:visual:run
         displayName: run FUI N* VR Test
         env:
           SCREENER_API_KEY: $(screener.key)
