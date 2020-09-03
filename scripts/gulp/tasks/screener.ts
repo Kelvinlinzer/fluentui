@@ -39,7 +39,7 @@ task('screener:pages', done => {
     const exampleNameWithRTLSetting = state.url.split('/maximize/')[1];
 
     const targetDirectory = config.paths.docsDist('maximize', exampleNameWithRTLSetting);
-    const targetFilename = config.paths.docsDist(exampleNameWithRTLSetting, 'index.html');
+    const targetFilename = config.paths.docsDist('maximize', exampleNameWithRTLSetting, 'index.html');
 
     fs.mkdirpSync(targetDirectory);
     fs.copyFileSync(sourceIndexFile, targetFilename);
