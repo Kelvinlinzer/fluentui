@@ -38,7 +38,7 @@ task('screener:pages', done => {
   screenerConfig.forEach(state => {
     const exampleNameWithRTLSetting = state.url.split('/maximize/')[1];
 
-    const targetDirectory = config.paths.docsDist(exampleNameWithRTLSetting);
+    const targetDirectory = config.paths.docsDist('maximize', exampleNameWithRTLSetting);
     const targetFilename = config.paths.docsDist(exampleNameWithRTLSetting, 'index.html');
 
     fs.mkdirpSync(targetDirectory);
