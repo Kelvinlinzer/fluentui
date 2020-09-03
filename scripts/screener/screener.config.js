@@ -44,11 +44,11 @@ module.exports = {
 
   apiKey: process.env.SCREENER_API_KEY,
 
-  tunnel: {
-    host: `${config.server_host}:${config.server_port}`,
-    gzip: true, // gzip compress all content being served from tunnel host
-    cache: true, // sets cache-control header for all content being served from tunnel host. Must be used with gzip option
-  },
+  // tunnel: {
+  //   host: `${config.server_host}:${config.server_port}`,
+  //   gzip: true, // gzip compress all content being served from tunnel host
+  //   cache: true, // sets cache-control header for all content being served from tunnel host. Must be used with gzip option
+  // },
 
   diffOptions: {
     structure: true,
