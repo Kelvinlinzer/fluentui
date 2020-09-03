@@ -1,4 +1,5 @@
 import { task, series } from 'gulp';
+import fs from 'fs-extra';
 import { argv } from 'yargs';
 
 import sh from '../sh';
@@ -30,4 +31,21 @@ task('screener:runner', cb => {
 // Default
 // ----------------------------------------
 
-task('screener:build', series('build:docs:assets:component:info', 'build:docs'));
+task('screener:pages', done => {
+  const screenerConfig = require('../../screener/screener.states').default;
+  const sourceIndexFile = config.paths.docsDist('index.html');
+
+  screenerConfig.forEach(state => {
+    const exampleNameWithRTLSetting = state.url.split('/maximize/')[1];
+
+    const targetDirectory = config.paths.docsDist(exampleNameWithRTLSetting);
+    const targetFilename = config.paths.docsDist(exampleNameWithRTLSetting, 'index.html');
+
+    fs.mkdirpSync(targetDirectory);
+    fs.copyFileSync(sourceIndexFile, targetFilename);
+  });
+
+  done();
+});
+
+task('screener:build', series('build:docs:assets:component:info', 'build:docs', 'screener:pages'));
