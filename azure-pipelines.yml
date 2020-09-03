@@ -59,7 +59,6 @@ jobs:
       - template: azure-pipelines.tools.yml
 
       - script: |
-          echo ${{variables.URL_BASE_PATH }}
           yarn
         displayName: yarn
 
@@ -115,7 +114,6 @@ jobs:
       - script: |
           git config --global user.email "fabrictactical@microsoft.com"
           git config --global user.name "Fabric Tactical"
-          echo ${{variables.URL_BASE_PATH }}
           NODE_ENV=production yarn test:fluentui:visual:build
         displayName: build FUI N* VR Test
 

@@ -14,6 +14,8 @@ const __BASENAME__ = process.env.URL_BASE_PATH
     `${process.env.URL_BASE_PATH}/react-northstar/`
   : '/';
 
+console.log(process.env);
+throw new Error();
 const __SKIP_ERRORS__ = !!process.env.SKIP_ERRORS;
 
 const envConfig = {
