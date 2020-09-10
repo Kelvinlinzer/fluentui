@@ -48,9 +48,6 @@ export async function screenerRunner(screenerConfigPath) {
 
   const data = await response.json();
 
-  console.log(
-    `Screener tests queued. See job status at https://screener.io/v2/dashboard/${data.project}/${encodeURIComponent(
-      data.branch,
-    )}`,
-  );
+  console.log('Screener tests queued.');
+  console.log(`See job status at https://screener.io/v2/dashboard/${data.project}/${encodeURIComponent(data.branch)}`);
 }
