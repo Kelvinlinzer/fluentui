@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 import { ScreenerRunnerConfig } from './screener.types';
 
 const SCREENER_ENDPOINT = 'https://screener.io/api/v2/projects';
