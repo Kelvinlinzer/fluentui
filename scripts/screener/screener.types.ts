@@ -1,4 +1,27 @@
-export type ScreenerAPIStep = {
+export type ScreenerRunnerConfig = {
+  apiKey: string;
+  projectRepo: string;
+
+  diffOptions: {
+    structure: boolean;
+    layout: boolean;
+    style: boolean;
+    content: boolean;
+    minLayoutPosition: number; // Optional threshold for Layout changes. Defaults to 4 pixels.
+    minLayoutDimension: number; // Optional threshold for Layout changes. Defaults to 10 pixels.
+    minShiftGraphic: number; // Optional threshold for pixel shifts in graphics.
+    compareSVGDOM: number; // Pass if SVG DOM is the same. Defaults to false.
+  };
+
+  states: ScreenerRunnerStep[];
+
+  alwaysAcceptBaseBranch: boolean;
+  baseBranch: string;
+  commit: string;
+  failureExitCode: number;
+};
+
+export type ScreenerRunnerStep = {
   type: string;
 
   code?: string;

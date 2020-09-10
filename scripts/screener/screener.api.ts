@@ -1,4 +1,4 @@
-import { ScreenerAPIStep, ScreenerRunnerKeys, ScreenerStepBuilder, ScreenerThemeName } from './screener.types';
+import { ScreenerRunnerStep, ScreenerRunnerKeys, ScreenerStepBuilder, ScreenerThemeName } from './screener.types';
 
 export const keys: ScreenerRunnerKeys = {
   alt: '\uE00A',
@@ -24,7 +24,7 @@ export const keys: ScreenerRunnerKeys = {
 };
 
 export class Steps implements ScreenerStepBuilder {
-  steps: ScreenerAPIStep[] = [];
+  steps: ScreenerRunnerStep[] = [];
 
   url = (url: string) => {
     this.steps.push({
