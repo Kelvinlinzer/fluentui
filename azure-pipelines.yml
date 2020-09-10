@@ -112,7 +112,7 @@ jobs:
         displayName: yarn
 
       - script: |
-          NODE_ENV=production yarn test:fluentui:visual
+          NODE_ENV=production yarn test:fluentui:visual:build
         displayName: build FUI N* VR Test
 
       - task: AzureUpload@1
